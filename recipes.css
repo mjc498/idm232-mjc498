@@ -173,15 +173,33 @@ footer {
     background-color: var(--header-color);
     color: var(--primary-bg-color);
     padding: 20px;
-    text-align: center;
 }
 
-footer .social-links a {
+footer .footer-links {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+footer .footer-links ul {
+    list-style-type: none;
+    padding: 0; 
+}
+
+footer .footer-links li {
+    margin-bottom: 5px; 
+}
+
+footer .footer-links a {
     color: var(--primary-bg-color);
-    margin: 0 10px;
     text-decoration: none;
 }
 
-footer .social-links a:hover {
+footer .footer-links a:hover {
     color: var(--accent-color);
+    transition: 0.3s ease;
+}
+
+footer p {
+    margin-top: 20px;
 }
