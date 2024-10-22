@@ -187,7 +187,7 @@ footer .footer-links ul {
 }
 
 footer .footer-links li {
-    margin-bottom: 5px; 
+    margin-bottom: 5px; /* Adds spacing between list items */
 }
 
 footer .footer-links a {
@@ -201,5 +201,59 @@ footer .footer-links a:hover {
 }
 
 footer p {
-    margin-top: 20px;
+    margin: 0;
+}
+
+/* ------------------------------------------ */
+
+/* about us */
+.about-intro {
+    padding: 50px 10px;
+}
+
+.contact-form {
+    padding: 10px;
+}
+
+h2 {
+    font-family: 'playfair-display';
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-bottom: 50px;  
+}
+
+.contact-form label {
+    margin: 10px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 300px; 
+    padding: 10px;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    border: 1px solid var(--accent-color); 
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;  
+}
+
+.contact-form button:hover {
+    background-color: var(--primary-bg-color);
+    color: var(--accent-color);
+    transition: 0.3s ease;
+    border: 3px solid var(--accent-color)
 }
