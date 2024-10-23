@@ -250,6 +250,90 @@ footer p {
     margin-bottom: 10px;
 }
 
+/* HOME - SIZE - TABLET */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .recipe-grid {
+        flex-direction: flex;
+    }
+
+    .recipe-card {
+        width: 100px;
+
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero-text {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .featured-recipes h2 {
+        font-size: 28px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+}
+
+/* HOME - SIZE - PHONE */
+@media (max-width: 480px) {
+    .recipe-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card {
+        width: 100%; /* Full width of the container */
+        max-width: 100%; /* Prevent overflow */
+        margin-bottom: 20px; /* Space between cards */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hero {
+        padding: 30px 10px;
+    }
+
+    .hero-text {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .featured-recipes h2 {
+        font-size: 24px;
+    }
+}
+
+
 /* ------------------------------------------ */
 /* ABOUT US - WELCOME */
 h2 {
