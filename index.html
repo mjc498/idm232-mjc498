@@ -14,12 +14,18 @@
             <h1>Recipe Book</h1>
         </div>
         <nav>
-            <ul>
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="recipes.html">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
             </ul>
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -27,7 +33,7 @@
     <section class="hero">
         <div class="hero-text">
             <h2>Home</h2>
-            <p>Lorem ipsum...</p>
+            <p>Discover Delicious Recipes</p>
             <form action="#" class="search-bar">
                 <input type="text" placeholder="search here">
                 <button type="submit">search</button>
@@ -43,11 +49,11 @@
                 <img src="images/recipe-01.jpg" alt="Recipe 1">
                 <h3>Recipe 1</h3></a>
             </div>
-            <div class="recipe-card"><a href="recipes.html">
+            <div class="recipe-card"><a href="recipe-01.html">
                 <img src="images/recipe-01.jpg" alt="Recipe 2">
                 <h3>Recipe 2</h3></a>
             </div>
-            <div class="recipe-card"><a href="recipes.html">
+            <div class="recipe-card"><a href="recipe-01.html">
                 <img src="images/recipe-01.jpg" alt="Recipe 3">
                 <h3>Recipe 3</h3></a>
             </div>
@@ -66,5 +72,17 @@
             <p>&copy; 2024 Recipe Book - Maria-Louisa Ching. All Rights Reserved.</p>
         </div>
     </footer>
+
+<!-- script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('nav-list');
+    
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
