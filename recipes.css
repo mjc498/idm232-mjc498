@@ -464,6 +464,81 @@ h2 {
 }
 
 /* ------------------------------------------ */
+/* RECIPE ONE */
+.single-recipe {
+    padding: 50px;
+    background-color: var(--primary-bg-color);
+}
+
+.recipe-header h1 {
+    font-size: 36px;
+    color: var(--header-color);
+    font-family: 'playfair-display';
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    max-width: 300px; /* Set a maximum width for desktop screens */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ingredients-section,
+.instructions-section {
+    background-color: var(--secondary-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.ingredients-section h2,
+.instructions-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'playfair-display';
+    color: var(--primary-bg-color);
+}
+
+.ingredients-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients-section li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--primary-bg-color);
+}
+
+.ingredients-section input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.instructions-section ol {
+    padding-left: 20px;
+    font-size: 18px;
+    color: var(--primary-bg-color);
+}
+
+.instructions-section li {
+    margin-bottom: 15px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .recipe-image img {
+        width: 100%;
+        max-width: 100%; /* Ensures it takes up the full container width on mobile */
+    }
+}
+
+/* ------------------------------------------ */
 /* HELP */
 .help-section {
     padding: 20px 10px; 
