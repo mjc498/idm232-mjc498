@@ -391,10 +391,10 @@ footer p {
     }
 
     .recipe-card {
-        width: 100%; 
-        max-width: 50%; 
+        width: 100% !important;
         margin-bottom: 20px; 
     }
+
 
     header {
         flex-direction: column;
@@ -530,6 +530,12 @@ h2 {
 .recipe-card p {
     font-size: 16px;
     line-height: 1.6;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .recipe-card {
+        width: 45%; /* Widen the cards to take more space on tablet screens */
+    }
 }
 
 /* RECIPES - PAGES */
