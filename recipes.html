@@ -34,13 +34,33 @@
         <h2>Recipes</h2>
 
 <!-- search bar -->
-    <!-- search bar -->
         <div class="search-bar">
             <input type="text" placeholder="Search for recipes...">
-            <button type="submit">Search</button>
+            <a href="error.html"><button type="submit">Search</button></a>
         </div>
 
         <div class="recipe-grid">
+
+<!-- filters -->
+    <div class="filtering-system">
+        <label for="cuisine">Choose a cuisine:</label>
+        <select id="cuisine">
+            <option value="">All</option>
+            <option value="italian">Mediterranean</option>
+            <option value="chinese">Asian</option>
+            <option value="mexican">Latin</option>
+            <option value="indian">European</option>
+        </select>
+
+        <label for="diet">Select a diet:</label>
+        <select id="diet">
+            <option value="">All</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="gluten-free">Gluten Free</option>
+            <option value="keto">Keto</option>
+        </select>
+    </div>
 
 <!-- recipe card 1 -->
             <div class="recipe-card">

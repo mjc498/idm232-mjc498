@@ -533,11 +533,7 @@ h2 {
     line-height: 1.6;
 }
 
-@media (min-width: 600px) and (max-width: 1024px) {
-    .recipe-card {
-        width: 45%; /* Widen the cards to take more space on tablet screens */
-    }
-}
+/* RECIPES - FILTERS */
 
 /* RECIPES - PAGES */
 .pages {
@@ -657,4 +653,40 @@ h2 {
 .help-section ul {
     margin-bottom: 20px; 
     list-style-type: none; 
+}
+
+/* ERROR PAGE */ 
+.error-page {
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    color: var(--secondary-bg-color);
+    margin-top: 180px;
+    width: auto;
+}
+
+.error-page h1 {
+    font-size: 36px;
+    font-family: 'playfair-display', serif;
+    margin-bottom: 20px;
+}
+
+.error-page p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.error-page a {
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.error-page a:hover {
+    background-color: var(--primary-bg-color);
+    color: var(--accent-color);
 }

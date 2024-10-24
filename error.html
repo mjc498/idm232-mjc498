@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error</title>
+    <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+
+<!-- navigation bar -->
+    <header>
+        <div class="logo">
+            <h1>Recipe Book</h1>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+<!-- recipes -->
+    <div class="error-page">
+        <h1>Oops! There seems to be an error!</h1>
+        <p>Something went wrong. Go back to the Recipes page or try again later.</p>
+        <a href="recipes.html">Go to Homepage</a>
+    </div>
+
+<!-- footer -->
+<footer>
+    <div class="footer-links">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+        <p>&copy; 2024 Recipe Book - Maria-Louisa Ching. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- script -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
