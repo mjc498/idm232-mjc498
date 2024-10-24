@@ -539,7 +539,6 @@ h2 {
     flex-direction: row;
     margin-bottom: 20px;
     justify-content: space-between;
-    
 }
 
 .filters label {
@@ -709,4 +708,8 @@ h2 {
 .error-page a:hover {
     background-color: var(--primary-bg-color);
     color: var(--accent-color);
+}
+
+.search-bar a {
+    text-decoration: none;
 }
