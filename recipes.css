@@ -288,8 +288,9 @@ footer p {
 .search-bar input[type="text"] {
     padding: 10px;
     width: 200px;
-    border: none;
+    border: 2px solid var(--accent-color);
     border-radius: 5px;
+    margin-bottom: 25px;
 }
 
 .search-bar button {
@@ -302,7 +303,7 @@ footer p {
 }
 
 .search-bar button:hover {
-    background-color: var(--primary-bg-color);
+    background-color: var(--header-color);
     color: var(--accent-color);
     transition: 0.3s ease;
 }
