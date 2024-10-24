@@ -534,6 +534,26 @@ h2 {
 }
 
 /* RECIPES - FILTERS */
+.filters {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    
+}
+
+.filters label {
+    margin-top: 10px;
+    font-family: 'lato';
+    margin-bottom: 10px;
+}
+
+.filters select {
+    padding: 10px;
+    border: 1px solid var(--secondary-bg-color);
+    border-radius: 4px;
+}
+
 
 /* RECIPES - PAGES */
 .pages {
