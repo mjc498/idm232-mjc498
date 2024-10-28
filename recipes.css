@@ -583,7 +583,7 @@ h2 {
     background-color: var(--primary-bg-color);
 }
 
-.recipe-header h1 {
+.recipe-header h2 {
     font-size: 36px;
     color: var(--header-color);
     font-family: 'playfair-display';
@@ -596,10 +596,18 @@ h2 {
     height: auto;
     border-radius: 10px;
     margin-bottom: 30px;
-    max-width: 300px; /* Set a maximum width for desktop screens */
+    max-width: 300px; 
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.ingredients-section h3,
+.instructions-section h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'playfair-display';
+    color: var(--primary-bg-color);
 }
 
 .ingredients-section,
@@ -608,14 +616,6 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
-}
-
-.ingredients-section h2,
-.instructions-section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    font-family: 'playfair-display';
-    color: var(--primary-bg-color);
 }
 
 .ingredients-section ul {
