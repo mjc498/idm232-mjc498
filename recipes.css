@@ -278,10 +278,6 @@ footer p {
         gap: 10px;
     }
 
-    .recipe-grid {
-        flex-direction: flex;
-    }
-
     .recipe-card {
         width: 100px;
 
