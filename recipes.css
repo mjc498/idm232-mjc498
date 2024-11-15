@@ -698,3 +698,13 @@ body.scrolled .scroll-top {
     display: block;
 }
 
+/* PAGES */
+.pages a {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.pages a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+    transform: scale(1.1);
+}
