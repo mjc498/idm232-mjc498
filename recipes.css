@@ -217,6 +217,7 @@ footer p {
     background-image: url('images/hero-image.jpg'); 
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     padding: 100px 20px;
     text-align: center;
     color: var(--primary-bg-color);
@@ -248,11 +249,11 @@ footer p {
     margin-bottom: 20px;
 }
 
-
 .recipe-grid {
     display: flex;
     flex-direction: row; 
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     flex-wrap: wrap; 
 }
 
@@ -261,8 +262,10 @@ footer p {
     padding: 20px;
     border-radius: 10px;
     color: var(--primary-bg-color);
-    text-align: center;
     width: 30%;
+    max-width: 300px; 
+    transition: transform 0.3s;
+    text-align: center;
 }
 
 .recipe-card img {
@@ -278,8 +281,14 @@ footer p {
         gap: 10px;
     }
 
+    .recipe-grid {
+        flex-direction: column;
+        align-items: center; 
+    }
+    
     .recipe-card {
-        width: 100px;
+        width: 80%;
+        margin-bottom: 20px;
     }
 
     header {
@@ -315,7 +324,7 @@ footer p {
     }
 
     .recipe-card {
-        width: 100% !important;
+        width: 90%;
         margin-bottom: 20px; 
     }
 
@@ -413,14 +422,15 @@ footer p {
 }
 
 .recipe-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .recipe-card img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .recipe-card h3 {
@@ -664,3 +674,27 @@ h2 {
     margin-bottom: 20px; 
     list-style-type: none; 
 }
+
+/* SCROLL */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    width: 40px; 
+    height: 40px; 
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.scrolled .scroll-top {
+    display: block;
+}
+
