@@ -1,0 +1,21 @@
+/* ------------------------------------------ */
+/* COLORS */
+:root {
+    --primary-bg-color: #fff9ef;
+    --primary-font-color: #04151F;
+    --secondary-bg-color: #183A37;
+    --header-color: #432534;
+    --accent-color: #C44900;
+}
+
+/* ------------------------------------------ */
+/* FONTS */
+@font-face {
+    font-family: 'lato';
+    src: url(fonts/lato/regular-body.ttf);
+}
+
+@font-face {
+    font-family: 'playfair-display';
+    src: url(fonts/playfair-display/regular-headings.ttf);
+}
