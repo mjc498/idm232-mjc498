@@ -35,76 +35,88 @@
         <h2>Recipes</h2>
 
 <!-- SEARCH -->
-    <div class="search-bar">
-        <input type="text" placeholder="Search for recipes...">
-        <button type="button" onclick="window.location.href='error.html'">Search</button>
-    </div>
+    <form method="GET" action="recipes.php">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for recipes...">
+            <button type="button" onclick="window.location.href='error.html'">Search</button>
+        </div>
 
 <!-- FILTERS -->
         <div class="filters">
             <label for="cuisine">Cuisine:</label>
-            <select id="cuisine">
+            <select id="cuisine" name="cuisine">
                 <option value="all">All</option>
-                <option value="spicy">Spicy</option>
-                <option value="bbq">BBQ</option>
-                <option value="grilled">Grilled</option>
+                <option value="mexican">Mexican</option>
+                <option value="french">French</option>
+                <option value="italian">Italian</option>
+                <option value="american">American</option>
+                <option value="asian">Asian</option>
+                <option value="middle-eastern">Middle Eastern</option>
+                <option value="meditterranean">Meditterranean</option>
+                <option value="indian">Indian</option>
+                <option value="korean">Korean</option>
+                <option value="thai">Thai</option>
             </select>
 
-            <label for="meal-type">Meal Type:</label>
-            <select id="meal-type">
+            <label for="protein">Protein:</label>
+            <select id="protein">
                 <option value="all">All</option>
-                <option value="appetizer">Appetizer</option>
-                <option value="main-course">Main Course</option>
-                <option value="dessert">Dessert</option>
+                <option value="chicken">Chicken</option>
+                <option value="beef">Beef</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="pasta">Pasta</option>
+                <option value="fish">Fish</option>
+                <option value="pork">Pork</option>
+                <option value="turkey">Turkey</option>
             </select>
         </div>
+    </form>
 
         <div class="recipe-grid">
+            <!-- Recipe cards will be generated here by PHP -->
+        </div>
+    </section>
 
-<!-- RECIPE ONE -->
+<!-- 
             <div class="recipe-card">
                 <img src="images/recipe-01.jpg" alt="Recipe Image">
                 <h3>Recipe 1</h3>
                 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
             </div>
 
-<!-- RECIPE TWO -->
             <div class="recipe-card">
                 <img src="images/recipe-01.jpg" alt="Recipe Image">
                 <h3>Recipe 2</h3>
                 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
             </div>
 
-<!-- RECIPE THREE -->
             <div class="recipe-card">
                 <img src="images/recipe-01.jpg" alt="Recipe Image">
                 <h3>Recipe 3</h3>
                 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
             </div>
 
-<!-- RECIPE FOUR -->
             <div class="recipe-card">
                 <img src="images/recipe-01.jpg" alt="Recipe Image">
                 <h3>Recipe 4</h3>
                 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
             </div>
 
-<!-- RECIPE FIVE -->
             <div class="recipe-card">
                 <img src="images/recipe-01.jpg" alt="Recipe Image">
                 <h3>Recipe 5</h3>
                 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
             </div>
 
-<!-- RECIPE SIX -->
             <div class="recipe-card">
                 <img src="images/recipe-01.jpg" alt="Recipe Image">
                 <h3>Recipe 6</h3>
                 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
             </div>
         </div>
+    -->
 
-<!-- PAGES -->
+<!-- PAGES 
         <div class="pages">
             <a href="#">&laquo; Previous</a>
             <a href="#">1</a>
@@ -112,7 +124,7 @@
             <a href="#">3</a>
             <a href="#">Next &raquo;</a>
         </div>
-    </section>
+    </section> -->
 
 
 <!-- FOOTER -->
@@ -123,6 +135,7 @@
                 <li><a href="recipes.html">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
+                <li><a href="case-study.html">Case Study</a></li>
             </ul>
             <p>&copy; 2024 Recipe Book - Maria-Louisa Ching. All Rights Reserved.</p>
         </div>
