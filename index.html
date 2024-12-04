@@ -61,11 +61,6 @@
         </div>
     </section>
 
-<!-- SCROLL -->
-    <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-        ↑
-    </button>
-
 <!-- FOOTER -->
     <footer>
         <div class="footer-links">
@@ -76,7 +71,7 @@
                 <li><a href="help.html">Help</a></li>
                 <li><a href="case-study.html">Case Study</a></li>
             </ul>
-            <p>&copy; 2024 Recipe Book - Maria-Louisa Ching. All Rights Reserved.</p>
+            <p>&copy; 2024 Recipe Book | Maria-Louisa Ching | All Rights Reserved</p>
         </div>
     </footer>
 
@@ -88,10 +83,6 @@
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navList.classList.toggle('active');
-        });
-
-        window.addEventListener('scroll', () => {
-        document.body.classList.toggle('scrolled', window.scrollY > 100);
         });
     </script>
 

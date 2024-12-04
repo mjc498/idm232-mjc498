@@ -40,6 +40,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
 }
 
 header .logo h1 {
@@ -53,6 +56,16 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    position: static;
+    top: auto;
+    right: auto;
+    width: auto; 
+    height: auto;
+    background-color: transparent; 
+    flex-direction: row; 
+    justify-content: flex-end; 
+    align-items: center;
+    margin-left: auto; 
 }
 
 nav ul li a {
@@ -85,8 +98,8 @@ nav ul li a:hover::after {
     cursor: pointer;
     position: absolute;
     right: 20px;
-    top: 20px;
-    display: flex;
+    top: 30px;
+    display: none;
 }
 
 .hamburger span {
@@ -98,7 +111,7 @@ nav ul li a:hover::after {
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6.5px, 6.5px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -107,6 +120,44 @@ nav ul li a:hover::after {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ------------------------------------------ */
+/* HERO */
+.hero {
+    background-image: url('images/hero-image.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 20px;
+    text-align: center;
+    color: var(--primary-bg-color);
+    position: relative;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: 'playfair-display';
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 /* ------------------------------------------ */
@@ -146,45 +197,6 @@ footer .footer-links a:hover {
 
 footer p {
     margin: 0;
-}
-
-
-/* ------------------------------------------ */
-/* HERO */
-.hero {
-    background-image: url('images/hero-image.webp'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 100px 20px;
-    text-align: center;
-    color: var(--primary-bg-color);
-    position: relative;
-}
-
-.hero:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
-    z-index: 1;
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-
-    font-size: 30px;
-    margin-bottom: 10px;
-    font-family: 'playfair-display';
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
 }
 
 /* ------------------------------------------ */
