@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="recipes.css">
 </head>
 <body>
-
-<!-- NAVIGATION -->
     <header>
         <div class="logo">
             <h1>Recipe Book</h1>
@@ -26,17 +24,16 @@
     <section class="recipe-listing">
         <h2>Recipes</h2>
 
-<!-- SEARCH -->
+        <!-- Search and Filter Form -->
         <form method="GET" action="recipes.php">
             <div class="search-bar">
                 <input 
                     type="text" 
                     name="search" 
                     placeholder="Search for recipes..." >
-                    <button type="submit">Search</button
+                <button type="submit">Search</button>
             </div>
 
-<!-- FILTERS -->
             <div class="filters">
                 <label for="cuisine">Cuisine:</label>
                 <select id="cuisine" name="cuisine">
@@ -53,8 +50,8 @@
                     <option value="thai">Thai</option>
                 </select>
 
-                <label for="protein">Protein:</label>
-                <select id="protein" name="protein">
+                <label for="type">Protein:</label>
+                <select id="type" name="type">
                     <option value="all">All</option>
                     <option value="chicken">Chicken</option>
                     <option value="beef">Beef</option>
@@ -64,25 +61,21 @@
                     <option value="pork">Pork</option>
                     <option value="turkey">Turkey</option>
                 </select>
-
                 <button type="submit" class="apply-filters-btn">Apply Filters</button>
             </div>
         </form>
 
-<!-- GRID -->
-        <div class="recipe-grid">
-            <div class="recipe-card">
-                <img src="images/" alt="Chicken Parmesan">
-                <h3>Chicken Parmesan</h3>
-                <p><strong>Cuisine:</strong> Italian</p>
-                <p><strong>Prep Time:</strong> 30 mins</p>
-                <p><strong>Servings:</strong> 4</p>
-                <a href="recipe_detail.php?id=1">View Recipe</a>
-            </div>
+        <!-- Recipe Grid -->
+        <div class="recipe-card">
+            <img src="images/recipe-01.jpg" alt="Chicken Parmesan">
+            <h3>Chicken Parmesan</h3>
+            <p><strong>Cuisine:</strong> Italian</p>
+            <p><strong>Prep Time:</strong> 30 mins</p>
+            <p><strong>Servings:</strong> 4</p>
+            <a href="recipe_detail.php?id=1">View Recipe</a>
         </div>
     </section>
 
-<!-- FOOTER -->
     <footer>
         <div class="footer-links">
             <ul>
