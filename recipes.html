@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>recipes</title>
+    <title>Recipes</title>
     <link rel="stylesheet" href="recipes.css">
 </head>
 <body>
@@ -16,141 +16,83 @@
         <nav>
             <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
             </ul>
-
-<!-- HAMBURGER -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
-<!-- RECIPES -->
     <section class="recipe-listing">
         <h2>Recipes</h2>
 
 <!-- SEARCH -->
-    <form method="GET" action="recipes.php">
-        <div class="search-bar">
-            <input type="text" placeholder="Search for recipes...">
-            <button type="button" onclick="window.location.href='error.html'">Search</button>
-        </div>
+        <form method="GET" action="recipes.php">
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    name="search" 
+                    placeholder="Search for recipes..." >
+                    <button type="submit">Search</button
+            </div>
 
 <!-- FILTERS -->
-        <div class="filters">
-            <label for="cuisine">Cuisine:</label>
-            <select id="cuisine" name="cuisine">
-                <option value="all">All</option>
-                <option value="mexican">Mexican</option>
-                <option value="french">French</option>
-                <option value="italian">Italian</option>
-                <option value="american">American</option>
-                <option value="asian">Asian</option>
-                <option value="middle-eastern">Middle Eastern</option>
-                <option value="meditterranean">Meditterranean</option>
-                <option value="indian">Indian</option>
-                <option value="korean">Korean</option>
-                <option value="thai">Thai</option>
-            </select>
+            <div class="filters">
+                <label for="cuisine">Cuisine:</label>
+                <select id="cuisine" name="cuisine">
+                    <option value="all">All</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="french">French</option>
+                    <option value="italian">Italian</option>
+                    <option value="american">American</option>
+                    <option value="asian">Asian</option>
+                    <option value="middle-eastern">Middle Eastern</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="indian">Indian</option>
+                    <option value="korean">Korean</option>
+                    <option value="thai">Thai</option>
+                </select>
 
-            <label for="protein">Protein:</label>
-            <select id="protein">
-                <option value="all">All</option>
-                <option value="chicken">Chicken</option>
-                <option value="beef">Beef</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="pasta">Pasta</option>
-                <option value="fish">Fish</option>
-                <option value="pork">Pork</option>
-                <option value="turkey">Turkey</option>
-            </select>
-        </div>
-    </form>
+                <label for="protein">Protein:</label>
+                <select id="protein" name="protein">
+                    <option value="all">All</option>
+                    <option value="chicken">Chicken</option>
+                    <option value="beef">Beef</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="pasta">Pasta</option>
+                    <option value="fish">Fish</option>
+                    <option value="pork">Pork</option>
+                    <option value="turkey">Turkey</option>
+                </select>
 
+                <button type="submit" class="apply-filters-btn">Apply Filters</button>
+            </div>
+        </form>
+
+<!-- GRID -->
         <div class="recipe-grid">
-            <!-- Recipe cards will be generated here by PHP -->
+            <div class="recipe-card">
+                <img src="images/" alt="Chicken Parmesan">
+                <h3>Chicken Parmesan</h3>
+                <p><strong>Cuisine:</strong> Italian</p>
+                <p><strong>Prep Time:</strong> 30 mins</p>
+                <p><strong>Servings:</strong> 4</p>
+                <a href="recipe_detail.php?id=1">View Recipe</a>
+            </div>
         </div>
     </section>
-
-<!-- 
-            <div class="recipe-card">
-                <img src="images/recipe-01.jpg" alt="Recipe Image">
-                <h3>Recipe 1</h3>
-                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
-            </div>
-
-            <div class="recipe-card">
-                <img src="images/recipe-01.jpg" alt="Recipe Image">
-                <h3>Recipe 2</h3>
-                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
-            </div>
-
-            <div class="recipe-card">
-                <img src="images/recipe-01.jpg" alt="Recipe Image">
-                <h3>Recipe 3</h3>
-                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
-            </div>
-
-            <div class="recipe-card">
-                <img src="images/recipe-01.jpg" alt="Recipe Image">
-                <h3>Recipe 4</h3>
-                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
-            </div>
-
-            <div class="recipe-card">
-                <img src="images/recipe-01.jpg" alt="Recipe Image">
-                <h3>Recipe 5</h3>
-                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
-            </div>
-
-            <div class="recipe-card">
-                <img src="images/recipe-01.jpg" alt="Recipe Image">
-                <h3>Recipe 6</h3>
-                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Lorem ipsum odor amet.</p>
-            </div>
-        </div>
-    -->
-
-<!-- PAGES 
-        <div class="pages">
-            <a href="#">&laquo; Previous</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">Next &raquo;</a>
-        </div>
-    </section> -->
-
 
 <!-- FOOTER -->
     <footer>
         <div class="footer-links">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
-                <li><a href="case-study.html">Case Study</a></li>
             </ul>
-            <p>&copy; 2024 Recipe Book - Maria-Louisa Ching. All Rights Reserved.</p>
+            <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
         </div>
     </footer>
-
-<!-- SCRIPT -->
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navList = document.getElementById('nav-list');
-    
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navList.classList.toggle('active');
-        });
-    </script>
-    
 </body>
 </html>
