@@ -35,29 +35,40 @@
         <h2>Recipes</h2>
 
 <!-- SEARCH -->
-    <div class="search-bar">
-        <input type="text" placeholder="Search for recipes...">
-        <button type="button" onclick="window.location.href='error.html'">Search</button>
-    </div>
+    <form method="GET" action="recipes.php">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for recipes...">
+            <button type="button" onclick="window.location.href='error.html'">Search</button>
+        </div>
 
 <!-- FILTERS -->
         <div class="filters">
             <label for="cuisine">Cuisine:</label>
-            <select id="cuisine">
-                <option value="all">All</option>
-                <option value="spicy">Spicy</option>
-                <option value="bbq">BBQ</option>
-                <option value="grilled">Grilled</option>
+            <select id="cuisine" name="cuisine">
+                <option value="mexican">Mexican</option>
+                <option value="french">French</option>
+                <option value="italian">Italian</option>
+                <option value="american">American</option>
+                <option value="asian">Asian</option>
+                <option value="middle-eastern">Middle Eastern</option>
+                <option value="meditterranean">Meditterranean</option>
+                <option value="indian">Indian</option>
+                <option value="korean">Korean</option>
+                <option value="thai">Thai</option>
             </select>
 
-            <label for="meal-type">Meal Type:</label>
-            <select id="meal-type">
-                <option value="all">All</option>
-                <option value="appetizer">Appetizer</option>
-                <option value="main-course">Main Course</option>
-                <option value="dessert">Dessert</option>
+            <label for="protein">Protein:</label>
+            <select id="protein">
+                <option value="chicken">Chicken</option>
+                <option value="beef">Beef</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="pasta">Pasta</option>
+                <option value="fish">Fish</option>
+                <option value="pork">Pork</option>
+                <option value="turkey">Turkey</option>
             </select>
         </div>
+    </form>
 
         <div class="recipe-grid">
 
