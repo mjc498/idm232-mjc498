@@ -1,20 +1,14 @@
 <?php
-include 'db_connect.php';
+include 'db_connection.php';
 
-// Check the database connection
-if ($mysqli->connect_error) {
-    die('Database connection failed: ' . $mysqli->connect_error);
-}
+// SQL 
+$sql = "SELECT * FROM final_recipes_list WHERE 1=1";
 
-// Initialize filters
+// FILTERS
 $searchQuery = $_GET['search'] ?? '';
 $cuisineFilter = $_GET['cuisine'] ?? 'all';
 $typeFilter = $_GET['type'] ?? 'all';
 
-// Base SQL query
-$sql = "SELECT * FROM final_recipes_list WHERE 1=1";
-
-// Apply filters dynamically
 if (!empty($searchQuery)) {
     $sql .= " AND recipe_name LIKE '%" . $mysqli->real_escape_string($searchQuery) . "%'";
 }
@@ -25,12 +19,11 @@ if ($typeFilter !== 'all') {
     $sql .= " AND protein = '" . $mysqli->real_escape_string($typeFilter) . "'";
 }
 
-// Limit the results to the first 3 recipes
+// DEFAULT
 $sql .= " LIMIT 3";
-
 $result = $mysqli->query($sql);
 
-// Fetch recipes into an array
+// RECIPES
 $recipes = [];
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -39,6 +32,8 @@ if ($result && $result->num_rows > 0) {
 }
 $mysqli->close();
 ?>
+
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +43,8 @@ $mysqli->close();
     <link rel="stylesheet" href="recipes.css">
 </head>
 <body>
+
+<!-- NAVIGATION -->
     <header>
         <div class="logo">
             <h1>Recipe Book</h1>
@@ -62,11 +59,13 @@ $mysqli->close();
         </nav>
     </header>
 
+<!-- HAMBURGER -->
+
     <main>
         <section class="recipe-listing">
             <h2>Recipes</h2>
 
-            <!-- Search and Filter Form -->
+<!-- FILTERS -->
             <form method="GET" action="recipes.php">
                 <div class="search-bar">
                     <input 
@@ -108,7 +107,7 @@ $mysqli->close();
                 </div>
             </form>
 
-            <!-- Recipe Grid -->
+<!-- RECIPES -->
             <div class="recipe-grid">
                 <?php if (!empty($recipes)): ?>
                     <?php foreach ($recipes as $recipe): ?>
@@ -132,6 +131,7 @@ $mysqli->close();
         </section>
     </main>
 
+<!-- FOOTER -->
     <footer>
         <div class="footer-links">
             <ul>
