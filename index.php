@@ -51,15 +51,17 @@ $mysqli->close();
 <section class="featured-recipes">
     <h2>Featured Recipes</h2>
     <div class="recipe-grid">
-        <?php
-        include 'db_connection.php';
+    <?php
+include 'db_connection.php';
 
-        $query = "SELECT * FROM final_recipes_list LIMIT 3";
-        $result = $mysqli->query($query);
+$query = "SELECT * FROM final_recipes_list LIMIT 3";
+$result = $mysqli->query($query);
 
-        if ($result && $result->num_rows > 0):
-            while ($recipe = $result->fetch_assoc()):
-        ?>
+if (!$result) {
+    die("Query failed: " . $mysqli->error);
+}
+?>
+
 
         <div class="recipe-card">
             <img src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
