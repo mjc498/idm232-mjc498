@@ -85,13 +85,13 @@ $mysqli->close();
                 <h3>Instructions</h3>
                 <ol>
                     <?php
-$instructions = $recipe['instructions'] ?? ''; // Default to an empty string if 'instructions' is missing or null
+                    $instructions = $recipe['instructions'] ?? ''; // Default to an empty string if 'instructions' is missing or null
 
-if (!empty($instructions)) {
-    $instructionsArray = explode("\n", $instructions); // Explode only if instructions are not empty
-} else {
-    $instructionsArray = []; // Default to an empty array if no instructions are provided
-}
+                    if (!empty($instructions)) {
+                        $instructionsArray = explode("\n", $instructions); // Explode only if instructions are not empty
+                    } else {
+                        $instructionsArray = []; // Default to an empty array if no instructions are provided
+                    }
                     ?>
                 </ol>
             </div>
