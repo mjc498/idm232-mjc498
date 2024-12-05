@@ -53,7 +53,7 @@ $mysqli->close();
     <div class="recipe-grid">
         <?php
         // Include the database connection
-        include 'db_connect.php';
+        include 'db_connection.php';
 
         // SQL query to fetch the first 3 recipes
         $query = "SELECT * FROM final_recipes_list LIMIT 3";
