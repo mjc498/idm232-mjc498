@@ -37,19 +37,26 @@ $mysqli->close();
 <body>
 
 <!-- NAVIGATION -->
-<header>
-    <div class="logo">
-        <h1>Recipe Book</h1>
-    </div>
-    <nav>
-        <ul id="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="recipes.php">Recipes</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="help.html">Help</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <div class="logo">
+            <h1>Recipe Book</h1>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="recipes.php">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+
+<!-- HAMBURGER -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
 <main>
     <section class="recipe-detail">
@@ -98,6 +105,17 @@ $mysqli->close();
         <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
     </div>
 </footer>
+
+<!-- SCRIPT -->
+<script>
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('nav-list');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>

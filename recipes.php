@@ -149,5 +149,17 @@ $mysqli->close();
             <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
         </div>
     </footer>
+
+<!-- SCRIPT -->
+<script>
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('nav-list');
+    
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+    
 </body>
 </html>

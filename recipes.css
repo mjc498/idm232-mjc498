@@ -201,12 +201,19 @@ footer p {
 
 /* ------------------------------------------ */
 /* FILTERS */
+.search-bar {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    gap: 10px; /* Adds spacing between the input and button */
+    margin: 20px auto; /* Optional: Centers the search bar on the page */
+}
+
 .search-bar input[type="text"] {
     padding: 10px;
     width: 200px;
     border: 2px solid var(--accent-color);
     border-radius: 5px;
-    margin-bottom: 25px;
 }
 
 .search-bar button {
@@ -276,6 +283,10 @@ footer p {
     font-size: 30px;
     margin-bottom: 30px;
     font-family: 'playfair-display';
+}
+
+.recipe-listing h2 {
+    margin-top: 32px;
 }
 
 /* RECIPES */
