@@ -50,7 +50,7 @@ $mysqli->close();
             <li><a href="help.html">Help</a></li>
         </ul>
 
-<!-- HAMBURGER -->
+        <!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -85,10 +85,13 @@ $mysqli->close();
                 <h3>Instructions</h3>
                 <ol>
                     <?php
-                    $instructions = explode("\n*\n", $recipe['instructions']);
-                    foreach ($instructions as $instruction) {
-                        echo '<li>' . nl2br(htmlspecialchars($instruction)) . '</li>';
-                    }
+$instructions = $recipe['instructions'] ?? ''; // Default to an empty string if 'instructions' is missing or null
+
+if (!empty($instructions)) {
+    $instructionsArray = explode("\n", $instructions); // Explode only if instructions are not empty
+} else {
+    $instructionsArray = []; // Default to an empty array if no instructions are provided
+}
                     ?>
                 </ol>
             </div>
