@@ -368,12 +368,18 @@ footer p {
     margin-right: auto;
 }
 
+.recipe-detail h2 {
+    padding-top: 32px; 
+}
+
 .ingredients-section,
 .instructions-section {
     background-color: var(--secondary-bg-color);
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px; 
+    max-width: 600px;
+    text-align: left; 
 }
 
 .ingredients-section h3,
@@ -424,7 +430,6 @@ footer p {
 .view-recipe-link:hover {
     background-color: var(--header-color); 
 }
-
 
 /* ------------------------------------------ */
 /* ABOUT */
@@ -584,4 +589,20 @@ h2 {
         width: 90%;
     }
 
+}
+
+.about-intro {
+    padding: 20px; /* Adds padding around the entire section */
+}
+
+.about-intro p {
+    padding: 20px; /* Adds space inside the paragraph */
+    margin: 0 auto; /* Centers the paragraph horizontally */
+    max-width: 600px; /* Optional: Limits the width for better readability */
+    font-size: 16px; /* Optional: Adjusts text size for better appearance */
+    line-height: 1.6; /* Optional: Improves text readability */
+    color: var(--primary-bg-color);
+    background-color: var(--secondary-bg-color); /* Optional: Adds a subtle background for visual appeal */
+    border-radius: 8px; /* Optional: Rounds corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }

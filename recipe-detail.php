@@ -9,6 +9,7 @@ if (empty($recipeId)) {
     exit;
 }
 
+
 // Fetch the recipe details from the database
 $sql = "SELECT * FROM final_recipes_list WHERE id = ?";
 $stmt = $mysqli->prepare($sql);
@@ -37,67 +38,70 @@ $mysqli->close();
 <body>
 
 <!-- NAVIGATION -->
-    <header>
-        <div class="logo">
-            <h1>Recipe Book</h1>
-        </div>
-        <nav>
-            <ul id="nav-list">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="recipes.php">Recipes</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
+<header>
+    <div class="logo">
+        <h1>Recipe Book</h1>
+    </div>
+    <nav>
+        <ul id="nav-list">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recipes.php">Recipes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
 
 <!-- HAMBURGER -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
 
 <main>
     <section class="recipe-detail">
         <h2><?php echo htmlspecialchars($recipe['recipe_name']); ?></h2>
-        <img 
-            src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" 
-            alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
-        <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine']); ?></p>
-        <p><strong>Cooking Time:</strong> <?php echo htmlspecialchars($recipe['cooking_time']); ?> mins</p>
-        <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings']); ?></p>
-        <p><strong>Description:</strong> <?php echo htmlspecialchars($recipe['recipe_description']); ?></p>
+        <div class="recipe-image">
+            <img 
+                src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" 
+                alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
+        </div>
+        
+        <div class="recipe-sections">
+            <div class="ingredients-section">
+                <h3>Ingredients</h3>
+                <ul>
+                    <?php
+                    $ingredients = explode("\n", $recipe['ingredients']);
+                    foreach ($ingredients as $ingredient) {
+                        echo '<li><input type="checkbox"> ' . htmlspecialchars($ingredient) . '</li>';
+                    }
+                    ?>
+                </ul>
+            </div>
 
-        <h3>Ingredients</h3>
-        <ul>
-            <?php
-            $ingredients = explode("\n", $recipe['ingredients']);
-            foreach ($ingredients as $ingredient) {
-                echo "<li>" . htmlspecialchars($ingredient) . "</li>";
-            }
-            ?>
-        </ul>
-
-        <h3>Instructions</h3>
-        <ol>
-            <?php
-            $instructions = explode("\n", $recipe['instructions']);
-            foreach ($instructions as $instruction) {
-                echo "<li>" . htmlspecialchars($instruction) . "</li>";
-            }
-            ?>
-        </ol>
-
-        <a href="recipes.php" class="back-btn">Back to Recipes</a>
+            <div class="instructions-section">
+                <h3>Instructions</h3>
+                <ol>
+                    <?php
+                    $instructions = explode("\n*\n", $recipe['instructions']);
+                    foreach ($instructions as $instruction) {
+                        echo '<li>' . nl2br(htmlspecialchars($instruction)) . '</li>';
+                    }
+                    ?>
+                </ol>
+            </div>
+        </div>
     </section>
 </main>
+
 
 <!-- FOOTER -->
 <footer>
     <div class="footer-links">
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="recipes.php">Recipes</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Help</a></li>
@@ -108,14 +112,14 @@ $mysqli->close();
 
 <!-- SCRIPT -->
 <script>
-        const hamburger = document.getElementById('hamburger');
-        const navList = document.getElementById('nav-list');
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navList.classList.toggle('active');
-        });
-    </script>
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>
