@@ -20,7 +20,7 @@ if ($typeFilter !== 'all') {
 }
 
 // DEFAULT
-$sql .= " LIMIT 3";
+$sql .= " LIMIT 40";
 $result = $mysqli->query($sql);
 
 // RECIPES
@@ -51,21 +51,26 @@ $mysqli->close();
         </div>
         <nav>
             <ul id="nav-list">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
             </ul>
-        </nav>
-    </header>
 
 <!-- HAMBURGER -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <section class="recipe-listing">
             <h2>Recipes</h2>
 
-<!-- FILTERS -->
+<!-- SEARCH -->
             <form method="GET" action="recipes.php">
                 <div class="search-bar">
                     <input 
@@ -76,6 +81,7 @@ $mysqli->close();
                     <button type="submit">Search</button>
                 </div>
 
+<!-- FILTERS -->
                 <div class="filters">
                     <label for="cuisine">Cuisine:</label>
                     <select id="cuisine" name="cuisine">
@@ -121,7 +127,7 @@ $mysqli->close();
                             <p><strong>Cooking Time:</strong> <?php echo htmlspecialchars($recipe['cooking_time']); ?> mins</p>
                             <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings']); ?></p>
                             <p><?php echo htmlspecialchars($recipe['recipe_subtitle']); ?></p>
-                            <a href="recipe_detail.php?id=<?php echo urlencode($recipe['id']); ?>">View Recipe</a>
+                            <a href="recipe-detail.php?id=<?php echo urlencode($recipe['id']); ?>">View Recipe</a>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -135,7 +141,7 @@ $mysqli->close();
     <footer>
         <div class="footer-links">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>

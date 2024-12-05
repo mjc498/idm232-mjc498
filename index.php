@@ -24,13 +24,13 @@ $mysqli->close();
     </div>
     <nav>
         <ul id="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recipes.php">Recipes</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Help</a></li>
         </ul>
 
-        <!-- HAMBURGER -->
+<!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -52,26 +52,24 @@ $mysqli->close();
     <h2>Featured Recipes</h2>
     <div class="recipe-grid">
         <?php
-        // Include the database connection
         include 'db_connection.php';
 
-        // SQL query to fetch the first 3 recipes
         $query = "SELECT * FROM final_recipes_list LIMIT 3";
         $result = $mysqli->query($query);
 
-        // Check if any recipes are returned
         if ($result && $result->num_rows > 0):
             while ($recipe = $result->fetch_assoc()):
         ?>
-            <div class="recipe-card">
-                <a href="recipe_detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">
-                    <img src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
-                    <h3><?php echo htmlspecialchars($recipe['recipe_name']); ?></h3>
-                </a>
-                <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine']); ?></p>
-                <p><strong>Cooking Time:</strong> <?php echo htmlspecialchars($recipe['cooking_time']); ?> mins</p>
-                <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings']); ?></p>
-            </div>
+
+        <div class="recipe-card">
+            <img src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
+            <h3><?php echo htmlspecialchars($recipe['recipe_name']); ?></h3>
+            <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine']); ?></p>
+            <p><strong>Cooking Time:</strong> <?php echo htmlspecialchars($recipe['cooking_time']); ?> mins</p>
+            <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings']); ?></p>
+            <a class="view-recipe-link" href="recipe-detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">View Recipe</a>
+        </div>
+
         <?php
             endwhile;
         else:
@@ -80,7 +78,6 @@ $mysqli->close();
         <?php
         endif;
 
-        // Close the database connection
         $mysqli->close();
         ?>
     </div>

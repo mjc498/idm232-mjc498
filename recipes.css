@@ -401,23 +401,26 @@ footer p {
 .view-recipe-link {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #f57c00;
-    color: #fff;
+    padding: 10px 15px;
+    background-color: var(--accent-color); 
+    color: var(--primary-bg-color);
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .view-recipe-link:hover {
-    background-color: #e64a19;
+    background-color: var(--header-color); 
 }
+
 
 /* ------------------------------------------ */
 /* ABOUT */
 h2 {
     font-family: 'playfair-display';
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .about-intro {
