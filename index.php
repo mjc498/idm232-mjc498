@@ -48,42 +48,39 @@ $mysqli->close();
 </section>
 
 <!-- RECIPES -->
-<section class="featured-recipes">
-    <h2>Featured Recipes</h2>
-    <div class="recipe-grid">
-    <?php
-include 'db_connection.php';
+    <section class="featured-recipes">
+        <h2>Featured Recipes</h2>
+        <div class="recipe-grid">
+            <?php
+            include 'db_connection.php';
 
-$query = "SELECT * FROM final_recipes_list LIMIT 3";
-$result = $mysqli->query($query);
+            $query = "SELECT * FROM final_recipes_list LIMIT 3";
+            $result = $mysqli->query($query);
 
-if (!$result) {
-    die("Query failed: " . $mysqli->error);
-}
-?>
+            if ($result && $result->num_rows > 0):
+                while ($recipe = $result->fetch_assoc()): // Open while loop
+            ?>
+                <div class="recipe-card">
+                    <img src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
+                    <h3><?php echo htmlspecialchars($recipe['recipe_name']); ?></h3>
+                    <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine']); ?></p>
+                    <p><strong>Cooking Time:</strong> <?php echo htmlspecialchars($recipe['cooking_time']); ?> mins</p>
+                    <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings']); ?></p>
+                    <a class="view-recipe-link" href="recipe-detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">View Recipe</a>
+                </div>
+            <?php
+                endwhile; // Close while loop
+            else:
+            ?>
+                <p>No recipes found.</p>
+            <?php
+            endif;
 
-
-        <div class="recipe-card">
-            <img src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
-            <h3><?php echo htmlspecialchars($recipe['recipe_name']); ?></h3>
-            <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine']); ?></p>
-            <p><strong>Cooking Time:</strong> <?php echo htmlspecialchars($recipe['cooking_time']); ?> mins</p>
-            <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings']); ?></p>
-            <a class="view-recipe-link" href="recipe-detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">View Recipe</a>
+            $mysqli->close();
+            ?>
         </div>
+    </section>
 
-        <?php
-            endwhile;
-        else:
-        ?>
-            <p>No recipes found.</p>
-        <?php
-        endif;
-
-        $mysqli->close();
-        ?>
-    </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
