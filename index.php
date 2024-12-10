@@ -57,8 +57,9 @@ $mysqli->close();
             $query = "SELECT * FROM final_recipes_list LIMIT 3";
             $result = $mysqli->query($query);
 
+            // OPEN WHILE LOOP
             if ($result && $result->num_rows > 0):
-                while ($recipe = $result->fetch_assoc()): // Open while loop
+                while ($recipe = $result->fetch_assoc()): 
             ?>
                 <div class="recipe-card">
                     <img src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
@@ -69,7 +70,8 @@ $mysqli->close();
                     <a class="view-recipe-link" href="recipe-detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">View Recipe</a>
                 </div>
             <?php
-                endwhile; // Close while loop
+                // CLOSE WHILE LOOP
+                endwhile; 
             else:
             ?>
                 <p>No recipes found.</p>
@@ -86,10 +88,11 @@ $mysqli->close();
 <footer>
     <div class="footer-links">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recipes.php">Recipes</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Help</a></li>
+            <li><a href="case-study.html">Case Study</a></li>
         </ul>
         <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
     </div>

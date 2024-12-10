@@ -127,7 +127,7 @@ $mysqli->close();
                             <p><strong>Cooking Time:</strong> <?php echo htmlspecialchars($recipe['cooking_time']); ?> mins</p>
                             <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings']); ?></p>
                             <p><?php echo htmlspecialchars($recipe['recipe_subtitle']); ?></p>
-                            <a href="recipe-detail.php?id=<?php echo urlencode($recipe['id']); ?>">View Recipe</a>
+                            <a class="view-recipe-link" href="recipe-detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">View Recipe</a>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -145,6 +145,7 @@ $mysqli->close();
                 <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
+                <li><a href="case-study.html">Case Study</a></li>
             </ul>
             <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
         </div>

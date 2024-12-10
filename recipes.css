@@ -372,22 +372,39 @@ footer p {
     padding-top: 32px; 
 }
 
+.description-section,
 .ingredients-section,
-.instructions-section {
-    background-color: var(--secondary-bg-color);
+.steps-section {
+    background-color: var(--secondary-bg-color); 
     padding: 20px;
     border-radius: 10px;
     margin: 0 auto 30px; 
     max-width: 600px;
     text-align: left; 
+    color: var(--primary-bg-color); 
 }
 
+.description-section h3,
 .ingredients-section h3,
-.instructions-section h3 {
+.steps-section h3 {
     font-size: 28px;
     margin-bottom: 15px;
-    font-family: 'playfair-display';
-    color: var(--primary-bg-color);
+    font-family: 'playfair-display'; 
+    color: var(--primary-bg-color); 
+}
+
+.description-section p,
+.steps-section ol {
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: var(--primary-bg-color); 
+}
+
+.description-section p,
+.steps-section ol {
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: var(--primary-bg-color); 
 }
 
 .ingredients-section ul {
@@ -591,18 +608,19 @@ h2 {
 
 }
 
+/* ABOUT */
 .about-intro {
-    padding: 20px; /* Adds padding around the entire section */
+    padding: 20px; 
 }
 
 .about-intro p {
-    padding: 20px; /* Adds space inside the paragraph */
-    margin: 0 auto; /* Centers the paragraph horizontally */
-    max-width: 600px; /* Optional: Limits the width for better readability */
-    font-size: 16px; /* Optional: Adjusts text size for better appearance */
-    line-height: 1.6; /* Optional: Improves text readability */
+    padding: 20px; 
+    margin: 0 auto;
+    max-width: 600px; 
+    font-size: 16px;
+    line-height: 1.6;
     color: var(--primary-bg-color);
-    background-color: var(--secondary-bg-color); /* Optional: Adds a subtle background for visual appeal */
-    border-radius: 8px; /* Optional: Rounds corners for a modern look */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    background-color: var(--secondary-bg-color); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

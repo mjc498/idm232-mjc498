@@ -1,7 +1,7 @@
 <?php
 include 'db_connection.php';
 
-// Get the recipe ID from the URL
+// URL RECIPE ID
 $recipeId = $_GET['id'] ?? '';
 
 if (empty($recipeId)) {
@@ -10,7 +10,7 @@ if (empty($recipeId)) {
 }
 
 
-// Fetch the recipe details from the database
+// RECIPE DETAILS FROM DB
 $sql = "SELECT * FROM final_recipes_list WHERE id = ?";
 $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("i", $recipeId);
@@ -50,7 +50,7 @@ $mysqli->close();
             <li><a href="help.html">Help</a></li>
         </ul>
 
-        <!-- HAMBURGER -->
+<!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -67,34 +67,47 @@ $mysqli->close();
                 src="images/<?php echo htmlspecialchars($recipe['id']); ?>.jpg" 
                 alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
         </div>
-        
-        <div class="recipe-sections">
+
+<!-- DESCRIPTION -->
+            <div class="description-section">
+                <h3>Description</h3>
+                <p><?php echo nl2br(htmlspecialchars($recipe['description'])); ?></p>
+            </div>
+
+<!-- INGREDIENTS -->        
             <div class="ingredients-section">
                 <h3>Ingredients</h3>
                 <ul>
                     <?php
                     $ingredients = explode("\n", $recipe['ingredients']);
                     foreach ($ingredients as $ingredient) {
-                        echo '<li><input type="checkbox"> ' . htmlspecialchars($ingredient) . '</li>';
+
+                        // REMOVE COMMAS
+                        $cleanedIngredient = str_replace(',', '', $ingredient);
+                        echo '<li><input type="checkbox"> ' . htmlspecialchars($cleanedIngredient) . '</li>';
                     }
                     ?>
                 </ul>
             </div>
 
-            <div class="instructions-section">
+<!-- INSTRUCTIONS -->
+            <div class="steps-section">
                 <h3>Instructions</h3>
-                <ol>
-                    <?php
-                    $instructions = $recipe['instructions'] ?? ''; // Default to an empty string if 'instructions' is missing or null
-
-                    if (!empty($instructions)) {
-                        $instructionsArray = explode("\n", $instructions); // Explode only if instructions are not empty
-                    } else {
-                        $instructionsArray = []; // Default to an empty array if no instructions are provided
-                    }
-                    ?>
-                </ol>
+                    <ol>
+                        <?php
+                        $steps = $recipe['steps'] ?? '';
+                        if (!empty($steps)) {
+                            $stepsArray = explode("\n", $steps);
+                            foreach ($stepsArray as $step) {
+                                echo '<li>' . htmlspecialchars($step) . '</li>';
+                            }
+                        } else {
+                                echo '<li>No steps available for this recipe.</li>';
+                        }
+                        ?>
+                    </ol>
             </div>
+            
         </div>
     </section>
 </main>
@@ -108,6 +121,7 @@ $mysqli->close();
             <li><a href="recipes.php">Recipes</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Help</a></li>
+            <li><a href="case-study.html">Case Study</a></li>
         </ul>
         <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
     </div>

@@ -1,13 +1,13 @@
 <?php
-// $db_host = 'localhost';
-// $db_user = 'root';
-// $db_password = 'root'; 
-// $db_db = 'idm232'; 
-
 $db_host = 'localhost';
-$db_user = 'mjc498';
-$db_password = 'j1dAxlMUsGWUJz21'; 
-$db_db = 'mjc498_db'; 
+$db_user = 'root';
+$db_password = 'root'; 
+$db_db = 'idm232'; 
+
+// $db_host = 'localhost';
+// $db_user = 'mjc498';
+// $db_password = 'j1dAxlMUsGWUJz21'; 
+// $db_db = 'mjc498_db'; 
 
 // Create the connection
 $mysqli = @new mysqli(
