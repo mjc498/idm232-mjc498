@@ -9,7 +9,7 @@ $db_db = 'idm232';
 // $db_password = 'j1dAxlMUsGWUJz21'; 
 // $db_db = 'mjc498_db'; 
 
-// Create the connection
+// CREATE CONNECTION
 $mysqli = @new mysqli(
     $db_host,
     $db_user,
@@ -17,7 +17,7 @@ $mysqli = @new mysqli(
     $db_db
 );
 
-// Check the connection
+// CHECK CONNECTION
 if ($mysqli->connect_error) {
     die('Database connection failed: ' . $mysqli->connect_error);
 }

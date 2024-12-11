@@ -9,7 +9,6 @@ if (empty($recipeId)) {
     exit;
 }
 
-
 // RECIPE DETAILS FROM DB
 $sql = "SELECT * FROM final_recipes_list WHERE id = ?";
 $stmt = $mysqli->prepare($sql);
@@ -37,7 +36,6 @@ $mysqli->close();
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <header>
     <div class="logo">
         <h1>Recipe Book</h1>
@@ -49,8 +47,6 @@ $mysqli->close();
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Help</a></li>
         </ul>
-
-<!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -68,52 +64,44 @@ $mysqli->close();
                 alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
         </div>
 
-<!-- DESCRIPTION -->
-            <div class="description-section">
-                <h3>Description</h3>
-                <p><?php echo nl2br(htmlspecialchars($recipe['description'])); ?></p>
-            </div>
-
-<!-- INGREDIENTS -->        
-            <div class="ingredients-section">
-                <h3>Ingredients</h3>
-                <ul>
-                    <?php
-                    $ingredients = explode("\n", $recipe['ingredients']);
-                    foreach ($ingredients as $ingredient) {
-
-                        // REMOVE COMMAS
-                        $cleanedIngredient = str_replace(',', '', $ingredient);
-                        echo '<li><input type="checkbox"> ' . htmlspecialchars($cleanedIngredient) . '</li>';
-                    }
-                    ?>
-                </ul>
-            </div>
-
-<!-- INSTRUCTIONS -->
-            <div class="steps-section">
-                <h3>Instructions</h3>
-                    <ol>
-                        <?php
-                        $steps = $recipe['steps'] ?? '';
-                        if (!empty($steps)) {
-                            $stepsArray = explode("\n", $steps);
-                            foreach ($stepsArray as $step) {
-                                echo '<li>' . htmlspecialchars($step) . '</li>';
-                            }
-                        } else {
-                                echo '<li>No steps available for this recipe.</li>';
-                        }
-                        ?>
-                    </ol>
-            </div>
-            
+        <div class="description-section">
+            <h3>Description</h3>
+            <p><?php echo nl2br(htmlspecialchars($recipe['description'])); ?></p>
         </div>
+
+        <div class="ingredients-section">
+            <h3>Ingredients</h3>
+            <ul>
+                <?php
+                $ingredients = explode("\n", $recipe['ingredients']);
+                foreach ($ingredients as $ingredient) {
+                    $cleanedIngredient = str_replace(',', '', $ingredient);
+                    echo '<li><input type="checkbox"> ' . htmlspecialchars($cleanedIngredient) . '</li>';
+                }
+                ?>
+            </ul>
+        </div>
+
+        <div class="steps-section">
+            <h3>Instructions</h3>
+            <div>
+                <?php
+                $steps = $recipe['steps'] ?? '';
+                if (!empty($steps)) {
+                    $stepsArray = explode("\n", $steps);
+                    foreach ($stepsArray as $step) {
+                        echo '<p>' . htmlspecialchars($step) . '</p>';
+                    }
+                } else {
+                    echo '<p>No steps available for this recipe.</p>';
+                }
+                ?>
+            </div>
+        </div>
+
     </section>
 </main>
 
-
-<!-- FOOTER -->
 <footer>
     <div class="footer-links">
         <ul>
@@ -127,7 +115,6 @@ $mysqli->close();
     </div>
 </footer>
 
-<!-- SCRIPT -->
 <script>
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
