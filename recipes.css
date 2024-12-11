@@ -205,10 +205,10 @@ footer p {
 /* FILTERS */
 .search-bar {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    gap: 10px; /* Adds spacing between the input and button */
-    margin: 20px auto; /* Optional: Centers the search bar on the page */
+    justify-content: center;
+    align-items: center; 
+    gap: 10px; 
+    margin: 20px auto; 
 }
 
 .search-bar input[type="text"] {

@@ -36,6 +36,7 @@ $mysqli->close();
 </head>
 <body>
 
+<!-- NAVIGATION -->
 <header>
     <div class="logo">
         <h1>Recipe Book</h1>
@@ -47,6 +48,8 @@ $mysqli->close();
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Help</a></li>
         </ul>
+
+<!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -64,11 +67,13 @@ $mysqli->close();
                 alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
         </div>
 
+<!-- DESCRIPTION -->
         <div class="description-section">
             <h3>Description</h3>
             <p><?php echo nl2br(htmlspecialchars($recipe['description'])); ?></p>
         </div>
 
+<!-- INGREDIENTS -->
         <div class="ingredients-section">
             <h3>Ingredients</h3>
             <ul>
@@ -82,6 +87,7 @@ $mysqli->close();
             </ul>
         </div>
 
+<!-- STEPS -->
         <div class="steps-section">
             <h3>Instructions</h3>
             <div>
@@ -102,6 +108,7 @@ $mysqli->close();
     </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
     <div class="footer-links">
         <ul>
@@ -115,6 +122,7 @@ $mysqli->close();
     </div>
 </footer>
 
+<!-- SCRIPT -->
 <script>
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
