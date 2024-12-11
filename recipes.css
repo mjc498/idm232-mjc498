@@ -50,8 +50,6 @@ header .logo h1 {
     font-family: 'playfair-display';
 }
 
-
-
 /* ------------------------------------------ */
 /* NAVIGATION */
 nav ul {
@@ -404,9 +402,14 @@ footer p {
 
 .description-section p,
 .steps-section ol {
-    font-size: 18px; 
+    font-size: 20px; 
     line-height: 1.6; 
     color: var(--primary-bg-color); 
+}
+
+.steps-section {
+    font-family: lato;
+    font-size: 18px;
 }
 
 .ingredients-section ul {

@@ -1,0 +1,109 @@
+/* ------------------------------------------ */
+/* COLORS */
+:root {
+    --primary-bg-color: #fff9ef;
+    --primary-font-color: #04151F;
+    --secondary-bg-color: #183A37;
+    --header-color: #432534;
+    --accent-color: #C44900;
+}
+
+/* ------------------------------------------ */
+/* FONTS */
+@font-face {
+    font-family: 'lato';
+    src: url(fonts/lato/regular-body.ttf);
+}
+
+@font-face {
+    font-family: 'playfair-display';
+    src: url(fonts/playfair-display/regular-headings.ttf);
+}
+
+/* ------------------------------------------ */
+/* ALL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: lato;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-font-color);
+}
+
+
+/* ------------------------------------------ */
+/* HERO */
+.hero-image {
+    height: auto; 
+    width: 100%; 
+    max-height: 340px; 
+    margin-bottom: 44px;
+}
+
+/* ------------------------------------------ */
+/* TEXT */
+h3 {
+    border-bottom: 3px solid var(--accent-color);
+    width: fit-content;
+    font-size: 22px;
+    margin: 0 auto; 
+}
+
+h4 {
+    margin-top: 16px;
+}
+
+h4,
+h4 a {
+    font-size: 18px;
+}
+
+h4 a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+h4 a:hover {
+    color: var(--primary-font-color);
+}
+
+p {
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 10px; 
+    text-align: left;
+    width: 80%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+ul {
+    margin-left: auto;
+    width: 80%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.text-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;     
+}
+
+/* ------------------------------------------ */
+/* IMAGES */
+.coding {
+    display: block;               
+    margin: 0 auto;                
+    width: 90%;                  
+    min-width: 300px;             
+    max-width: 600px;              
+    height: auto; 
+    border-radius: 12px;
+    border: 3px solid var(--accent-color); 
+}

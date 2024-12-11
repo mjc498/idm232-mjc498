@@ -55,6 +55,7 @@ $mysqli->close();
                 <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
+                <li><a href="case-study.html" target="_blank">Case Study</a></li>
             </ul>
 
 <!-- HAMBURGER -->
@@ -145,7 +146,7 @@ $mysqli->close();
                 <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
-                <li><a href="case-study.html">Case Study</a></li>
+                <li><a href="case-study.html" target="_blank">Case Study</a></li>
             </ul>
             <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
         </div>
